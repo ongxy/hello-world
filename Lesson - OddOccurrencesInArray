@@ -1,0 +1,23 @@
+
+class Solution {
+    public int[] solution(int[] a, int k) {
+        // write your code in Java SE 8
+    int[] temp = new int[a.length];
+    int pos=0; 
+    int len = a.length;
+    
+     if(k>=len  && len>0) {
+       k = k - ((k/len)*len); 
+     }
+    
+    if(len>1 && a!=null){
+     for(int i =0; i<len; i++){
+         if(i+k>len-1){
+             pos = k + i - len; 
+         } else{ pos=i+k; }
+         temp[pos] = a[i];
+     }
+     } else{temp = a;}
+   return temp;
+    }
+}
